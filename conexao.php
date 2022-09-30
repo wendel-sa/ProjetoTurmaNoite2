@@ -16,7 +16,8 @@ imagem TEXT
 
 $db->exec($TabelaProdutos);
 
-// criando a tabela no banco de dados de usuarios
+/* criando a tabela no 
+banco de dados de usuarios*/
 $TabelaUsuarios =
 "CREATE TABLE IF NOT EXISTS usuarios(
 id INTEGER PRIMARY KEY AUTOINCREMENT,

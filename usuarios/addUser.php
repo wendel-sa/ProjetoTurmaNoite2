@@ -14,7 +14,9 @@ $senha = $_POST["senha"];
 
 // criar a query de insercao
 
-$inserir = "INSERT INTO usuarios (nome, email, data_nascimento, senha) VALUES ('$nome', '$email', '$data_nascimento', '$senha')";
+$inserir = "INSERT INTO usuarios (nome, email,
+data_nascimento, senha) VALUES
+('$nome', '$email', '$data_nascimento', '$senha')";
 
 // executar a query
 $db->exec($inserir);

@@ -1,5 +1,6 @@
 <?php 
-//arquivo com uma lista de usuarios cadastrados no banco de dados
+/*arquivo com uma lista 
+de usuarios cadastrados no banco de dados*/
 //incluir o arquivo de conexao com o banco de dados
 include "../conexao.php";
 
@@ -11,7 +12,6 @@ $resultado = $db->query($selecionar);
 
 //incluir o arquivo de componentes/header.php
 include "../componentes/header.php";
-
 ?>
 
 <section>
@@ -41,8 +41,10 @@ include "../componentes/header.php";
                             <td><?php echo $linha["email"]; ?></td>
                             <td><?php echo $linha["data_nascimento"]; ?></td>
                             <td>
-                                <a href="editarUser.php?id=<?php echo $linha["id"]; ?>" class="btn btn-warning">Editar</a>
-                                <a href="excluirUser.php?id=<?php echo $linha["id"]; ?>" class="btn btn-danger">Excluir</a>
+                            <a href="editarUser.php?id=<?php echo $linha["id"]; ?>"
+                              class="btn btn-warning">Editar</a>
+                            <a href="excluirUser.php?id=<?php echo $linha["id"]; ?>"
+                              class="btn btn-danger">Excluir</a>
                             </td>
                         </tr>
                         <?php } ?>
@@ -51,9 +53,7 @@ include "../componentes/header.php";
             </div>
         </div>
     </div>
-
 </section>
-
 <?php
 //incluir o arquivo de componentes/footer.php
 include "../componentes/footer.php";

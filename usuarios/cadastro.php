@@ -19,24 +19,29 @@ include "../componentes/header.php";
                 <form action="addUser.php" method="post">
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome">
+                        <input type="text" class="form-control"
+                          name="nome" id="nome" placeholder="Digite seu nome">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email">
+                        <input type="email" class="form-control" 
+                          name="email" id="email" placeholder="Digite seu email">
                     </div>
 
                     <div class="form-group">
                         <label>Data de nascimento</label>
-                        <input type="date" class="form-control" name="data_nascimento" id="data_nascimento">
+                        <input type="date" class="form-control" 
+                          name="data_nascimento" id="data_nascimento">
                     </div>
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+                        <input type="password" class="form-control" 
+                          name="senha" id="senha" placeholder="Digite sua senha">
                     </div>
 
                     <div class="py-3">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary">
+                          Cadastrar</button>
                     </div>
                 </form>
             </div>
