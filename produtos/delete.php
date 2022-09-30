@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['u_id'];
 
-include '../conexao.php';
+include '../configuracao/conexao.php';
 $query = "DELETE FROM produtos WHERE id = '$id'";
 
 if ($db->exec($query)) {

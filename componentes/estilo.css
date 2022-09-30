@@ -1,0 +1,33 @@
+/*Criando um background linear*/
+.bg-1 {
+  background-image: linear-gradient(to right, #020024, #090979, #00d4ff);
+}
+
+.opacidade {
+  opacity: 0.8;
+}
+
+/*Criando um background*/
+.bg-2 {
+  background-color: #020024;
+}
+
+.efeito-vidro {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.btn-blue {
+  background-color: #090979;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background-color: #020024 !important;
+  color: #00d4ff !important;
+}

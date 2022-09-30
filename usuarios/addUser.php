@@ -2,8 +2,7 @@
 // arquivo de cadastro de usuario no banco de dados
 
 // incluir o arquivo de conexao com o banco de dados
-include "../conexao.php";
-
+include "../configuracao/conexao.php";
 // pegar os dados do formulario
 $nome = $_POST["nome"];
 $email = $_POST["email"];

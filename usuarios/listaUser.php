@@ -2,7 +2,7 @@
 /*arquivo com uma lista 
 de usuarios cadastrados no banco de dados*/
 //incluir o arquivo de conexao com o banco de dados
-include "../conexao.php";
+include "../configuracao/conexao.php";
 
 //criar a query de selecao
 $selecionar = "SELECT * FROM usuarios";
@@ -14,8 +14,8 @@ $resultado = $db->query($selecionar);
 include "../componentes/header.php";
 ?>
 
-<section>
-    <div class="container">
+<section class="py-5">
+    <div class="container efeito-vidro">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center">
@@ -25,7 +25,7 @@ include "../componentes/header.php";
         </div>
         <div class="row">
             <div class="col-12">
-                <table class="table table-striped">
+                <table class="table text-white">
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
