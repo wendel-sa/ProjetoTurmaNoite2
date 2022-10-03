@@ -6,11 +6,11 @@ include "../configuracao/conexao.php";
 
 //alterar a tabela de usuarios para o email ser unico
 //em sqlite
-$alterar = "CREATE UNIQUE INDEX IF NOT EXISTS email ON usuarios(email)";
+$alterarEmail = "CREATE UNIQUE INDEX IF NOT EXISTS email ON usuarios(email)";
 
 //executar a query
 //se der erro, exibir a mensagem de erro
-if(!$db->exec($alterar)) {
+if(!$db->exec($alterarEmail)) {
     echo $db->lastErrorMsg();
 } else {
     echo "Tabela alterada com sucesso!";
