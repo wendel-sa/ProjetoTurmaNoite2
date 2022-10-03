@@ -30,6 +30,7 @@ include "../componentes/header.php";
                         <tr>
                             <th scope="col">Nome</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Senha</th>
                             <th scope="col">Data de Nascimento</th>
                             <th scope="col">Ações</th>
                         </tr>
@@ -39,6 +40,7 @@ include "../componentes/header.php";
                         <tr>
                             <td><?php echo $linha["nome"]; ?></td>
                             <td><?php echo $linha["email"]; ?></td>
+                            <td><?php echo $linha["senha"]; ?></td>
                             <td><?php echo $linha["data_nascimento"]; ?></td>
                             <td>
                             <a href="editarUser.php?id=<?php echo $linha["id"]; ?>"

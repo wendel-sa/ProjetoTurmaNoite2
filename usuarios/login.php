@@ -16,7 +16,7 @@ include "../componentes/header.php";
         </div>
         <div class="row">
             <div class="col-12">
-                <form action="login.php" method="post">
+                <form action="../configuracao/validacao.php" method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" 
