@@ -5,8 +5,10 @@
 include '../configuracao/conexao.php';
 
 
-//Verifica se houve POST e se o usuario ou a senha é(são) vazio(s)
-if (!empty($_POST) AND (empty($_POST['email']) OR empty($_POST['senha']))) {
+//Verifica se houve POST e se o usuario 
+//ou a senha é(são) vazio(s)
+if (!empty($_POST) AND (empty($_POST['email'])
+ OR empty($_POST['senha']))) {
     header("Location: index.php"); exit;
 }
 

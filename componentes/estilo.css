@@ -31,3 +31,60 @@
   background-color: #020024 !important;
   color: #00d4ff !important;
 }
+
+.cat-1 {
+  background-image: linear-gradient(to right, #020024, #090979);
+  /*delay ao passar o mouse*/
+  transition: 0.3s;
+}
+
+.cat-1:hover {
+  /*animação*/
+  transform: scale(1.1);
+  /*sombra*/
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+}
+
+.cat-2 {
+  background-image: linear-gradient(to right, #3c1414, #a71d1d);
+  /*delay ao passar o mouse*/
+  transition: 0.3s;
+}
+
+.cat-2:hover {
+  /*animação*/
+  transform: scale(1.1);
+  /*sombra*/
+  box-shadow: 0 8px 32px 0 #a71d1d92;
+  backdrop-filter: blur(13.5px);
+}
+
+.cat-3 {
+  background-image: linear-gradient(to right, #1a1a1a, #4d4d4d);
+  /*delay ao passar o mouse*/
+  transition: 0.3s;
+}
+
+.cat-3:hover {
+  /*animação*/
+  transform: scale(1.1);
+  /*sombra*/
+  box-shadow: 0 8px 32px 0 #4d4d4d92;
+  backdrop-filter: blur(13.5px);
+}
+
+.cat-4 {
+  background-image: linear-gradient(to right, #032a0e, #0e7a0e);
+  /*delay ao passar o mouse*/
+  transition: 0.3s;
+}
+
+.cat-4:hover {
+  /*animação*/
+  transform: scale(1.1);
+  /*sombra*/
+  box-shadow: 0 8px 32px 0 #0e7a0e92;
+  backdrop-filter: blur(13.5px);
+}
+

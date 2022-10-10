@@ -34,7 +34,7 @@ include '../componentes/header.php';
 
                     <div>
                         <label class="form-label">Quantidade</label>
-                        <input type="number" name="qyd" class="form-control">
+                        <input type="number" name="qtd" class="form-control">
                     </div>
 
                     <div>

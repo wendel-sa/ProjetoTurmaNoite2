@@ -1,6 +1,7 @@
   <?php
   include 'componentes/header.php';
   ?>
+
   <section>
     <div class="p-3">
       <div class="card text-bg-dark">
@@ -12,52 +13,58 @@
           </div>
         </div>
       </div>
-
-
-
-      <div class="row">
-        <h1 class="text-center text-white">
-          Todos os Produtos
-        </h1>
-        <div class="col-3">
-
-          <div class="card" style="width: 18rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Duck_wings_outstretched.jpg/1200px-Duck_wings_outstretched.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">
-                Card title
-              </h5>
-              <p class="card-text">Some quick example text to build on
-                the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-3">
-
-          <div class="card efeito-vidro" style="width: 18rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Duck_wings_outstretched.jpg/1200px-Duck_wings_outstretched.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">
-                Card title
-              </h5>
-              <p class="card-text">Some quick example text to build on
-                the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-blue">Go somewhere</a>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
     </div>
 
   </section>
 
-  
+  <section>
+    <div class="container px-4 py-5 cat-1">
+      <h2 class="pb-2 border-bottom">Serviços</h2>
+
+      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="d-flex flex-column align-items-start gap-2">
+          <h3 class="fw-bold text-white">Left-aligned title explaining these awesome features</h3>
+          <p class="text-white">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <a href="#" class="btn btn-primary btn-lg">Ver Produtos</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+          <div class="d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h4 class="fw-semibold mb-0">Featured title</h4>
+            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h4 class="fw-semibold mb-0">Featured title</h4>
+            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h4 class="fw-semibold mb-0">Featured title</h4>
+            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h4 class="fw-semibold mb-0">Featured title</h4>
+            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
 
 

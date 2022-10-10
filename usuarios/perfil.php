@@ -10,7 +10,8 @@ if (!isset($_SESSION['usuario'])) {
 include "../configuracao/conexao.php";
 
 //criar a variavel de query com um select * da tabela usuarios
-$DadosUser = "SELECT * FROM usuarios WHERE email = '" . $_SESSION['usuario'] . "'";
+$DadosUser = "SELECT * FROM usuarios WHERE 
+email = '" . $_SESSION['usuario'] . "'";
 
 //executar a query em pdo
 $consulta = $db->query($DadosUser);
@@ -45,7 +46,8 @@ include "../componentes/header.php";
                                 <td><?php echo $linha["nome"]; ?></td>
                                 <td><?php echo $linha["email"]; ?></td>
                                 <td><?php echo $linha["senha"]; ?></td>
-                                <td><?php echo $linha["data_nascimento"]; ?></td>
+                                <td><?php echo $linha["data_nascimento"];
+                                 ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>

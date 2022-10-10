@@ -28,4 +28,20 @@ senha TEXT
 )";
 
 $db->exec($TabelaUsuarios);
+
+
+//tabela de compra
+$TabelaCompra =
+"CREATE TABLE IF NOT EXISTS compra(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+id_usuario INTEGER,
+id_produto INTEGER,
+quantidade INTEGER,
+valorTotal REAL,
+FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+FOREIGN KEY(id_produto) REFERENCES produtos(id)
+)";
+
+$db->exec($TabelaCompra);
+
 ?>
