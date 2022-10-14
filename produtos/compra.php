@@ -9,6 +9,10 @@ $idProduto = $_POST['idProduto'];
 $idUsuario = $_POST['idUsuario'];
 $quantidade = $_POST['quantidade'];
 $valor = $_POST['valor'];
+//converte valor para float
+$valor = str_replace(",", ".", $valor);
+//conerte quantidade para int
+$quantidade = (int)$quantidade;
 $valorTotal = $quantidade * $valor;
 
 //inserir os dados da compra
