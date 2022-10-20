@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo javascript</title>
+</head>
+
+<body>
+    <h1>
+        Clique na tabela
+    </h1>
+    <p>
+        Para exibir o formulario com os dados da linha
+    </p>
+    <table onclick="cadastrar()">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="idUser">1</td>
+                <td id="nomeUser">João</td>
+                <td id="idadeUser">20</td>
+            </tr>
+        <tbody>
+    </table>
+
+    <form action="" method="post" id="form" style="display: none;">
+        <label for="">Id</label>
+        <input type="text" name="id" id="inputId">
+        <label for="">Nome</label>
+        <input type="text" name="nome" id="inputNome">
+        <label for="">Idade</label>
+        <input type="text" name="idade" id="inputIdade">
+        <button type="button">Cadastrar</button>
+    </form>
+
+    <script>
+        function cadastrar() {
+            let idUser = document.getElementById("idUser").innerHTML;
+            let nomeUser = document.getElementById("nomeUser").innerHTML;
+            let idadeUser = document.getElementById("idadeUser").innerHTML;
+
+            //transforme o idUser em inteiro
+            let id = parseInt(idUser);
+            //colocar o valor do idUser no inputId
+            document.getElementById("inputId").value = idUser;
+
+            //colocar o valor do nomeUser no inputNome
+            document.getElementById("inputNome").value = nomeUser;
+
+            //colocar o valor do idadeUser no inputIdade
+            document.getElementById("inputIdade").value = idadeUser;
+
+            //coloque od display como none no is form
+            document.getElementById("form").style.display = "block";
+
+        }
+    </script>
+</body>
+
+</html>
