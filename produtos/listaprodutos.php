@@ -9,52 +9,6 @@ $Produtos = $db->query($todosProdutos);
 ?>
 <section class="py-5">
 
-  <main class="container text-white">
-    <h1 class="text-center">Categorias</h1>
-
-    <div class="row py-3">
-      <div class="col-3">
-        <div class="p-4 rounded-4 cat-1">
-          <div class="card-body">
-            <h5 class="card-title">Categoria 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-        <div class="p-4 rounded-4 cat-2">
-          <div class="card-body">
-            <h5 class="card-title">Categoria 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-        <div class="p-4 rounded-4 cat-3">
-          <div class="card-body">
-            <h5 class="card-title">Categoria 3 <i class="bi bi-arrow-right"></i></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-        <div class="p-4 rounded-4 cat-4">
-          <div class="card-body">
-            <h5 class="card-title">Categoria 4</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-  </main>
-
-
   <div class="container efeito-vidro">
     <div class="py-3">
       <h3>
@@ -64,6 +18,8 @@ $Produtos = $db->query($todosProdutos);
 
     <div>
       <a href="cadastro.php" class="btn btn-blue">Cadastrar Produto</a>
+      <a href="../comentarios/lista.php" class="btn btn-dark">Lista de Comentários</a>
+      
     </div>
 
     <div class="table-responsive px-3">

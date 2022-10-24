@@ -44,4 +44,20 @@ FOREIGN KEY(id_produto) REFERENCES produtos(id)
 
 $db->exec($TabelaCompra);
 
+/*Tabela de comentarios */
+
+$tabelaComentarios =
+"CREATE TABLE IF NOT EXISTS comentarios(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+id_usuario INTEGER,
+id_produto INTEGER,
+comentario TEXT,
+nota INTEGER,
+dataComentario TEXT,
+FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+FOREIGN KEY(id_produto) REFERENCES produtos(id)
+)";
+
+$db->exec($tabelaComentarios);
+
 ?>

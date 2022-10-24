@@ -88,9 +88,9 @@ while ($item = $resultado->fetchArray()) {
                   ?>
                 </label>
 
-                <form action="../produtos/comentar.php" method="POST">
-                  <input type="hidden" name="idProduto" value="<?php echo $item['id']; ?>">
-                  <input type="hidden" name="idUsuario" value="<?php echo $idUsuario; ?>">
+                <form action="../comentarios/addComentario.php" method="POST">
+                  <input type="hidden" name="id_produto" value="<?php echo $item['id']; ?>">
+                  <input type="hidden" name="id_usuario" value="<?php echo $idUsuario; ?>">
                   <textarea class="form-control" name="comentario" id="comentario" rows="3" placeholder="Comente Aqui"></textarea>
                   <div class="form-group">
                     <label for="nota">Nota</label>
@@ -129,131 +129,8 @@ while ($item = $resultado->fetchArray()) {
                   <i class="bi bi-star-fill"></i> 5
                   </br>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
-
                 </p>
               </div>
-
-              <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <i class="bi bi-person"></i>
-                </div>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">Ana Maria</strong>
-                  <i class="bi bi-chat-left-dots"></i> 3 dias atrás
-                  <i class="bi bi-star-fill"></i> 5
-                  </br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
-
-                </p>
-              </div>
-
-              <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <i class="bi bi-person"></i>
-                </div>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">Ana Maria</strong>
-                  <i class="bi bi-chat-left-dots"></i> 3 dias atrás
-                  <i class="bi bi-star-fill"></i> 5
-                  </br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
-
-                </p>
-              </div>
-
-              <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <i class="bi bi-person"></i>
-                </div>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">Ana Maria</strong>
-                  <i class="bi bi-chat-left-dots"></i> 3 dias atrás
-                  <i class="bi bi-star-fill"></i> 5
-                  </br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
-
-                </p>
-              </div>
-              <div class="d-flex text-muted pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text>
-                </svg>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">@username</strong>
-                  Some more representative placeholder content, related to this other user. Another status update, perhaps.
-                </p>
-              </div>
-              <div class="d-flex text-muted pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
-                </svg>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">@username</strong>
-                  This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-                </p>
-              </div>
-
-              <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <i class="bi bi-person"></i>
-                </div>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">Ana Maria</strong>
-                  <i class="bi bi-chat-left-dots"></i> 3 dias atrás
-                  <i class="bi bi-star-fill"></i> 5
-                  </br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
-
-                </p>
-              </div>
-
-              <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <i class="bi bi-person"></i>
-                </div>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">Ana Maria</strong>
-                  <i class="bi bi-chat-left-dots"></i> 3 dias atrás
-                  <i class="bi bi-star-fill"></i> 5
-                  </br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
-
-                </p>
-              </div>
-              <div class="d-flex text-muted pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text>
-                </svg>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">@username</strong>
-                  Some more representative placeholder content, related to this other user. Another status update, perhaps.
-                </p>
-              </div>
-              <div class="d-flex text-muted pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
-                </svg>
-
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">@username</strong>
-                  This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-                </p>
-              </div>
-              <small class="d-block text-end mt-3">
-                <a href="#">All updates</a>
-              </small>
             </div>
 
           </div>
@@ -285,8 +162,9 @@ while ($item = $resultado->fetchArray()) {
                           </small>
                         </li>
                         <li class="d-flex align-items-center">
-                          <a href="" class="btn btn-outline-light">
-                            Comprar
+                          <a href="../produtos/item.php?u_id=<?php echo $item['id']; ?>
+                          " class="btn btn-outline-light">
+                            Ver mais
                           </a>
                         </li>
                       </ul>

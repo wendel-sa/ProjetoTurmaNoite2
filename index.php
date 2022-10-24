@@ -1,72 +1,58 @@
   <?php
+  include "configuracao/conexao.php";
   include 'componentes/header.php';
   ?>
 
-  <section>
-    <div class="p-3">
-      <div class="card text-bg-dark">
-        <div class="card-img bg-1" style="height: 300px;">
-          <div class="card-img-overlay">
-            <h5 class="card-title">Novidade!</h5>
-            <p class="card-text">Novo Produto disponivel.</p>
-            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  <div class="py-5">
+    <section>
+
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="text-white fs-5 fs-xl-6">
+              <span class="fw-bold">PetShop</span>
+              Encontre o seu pet ideal aqui!
+            </h1>
+            <p class="text-white py-lg-3 py-2">
+            Eles são graciosos e bons companheiros, mas não apenas isso. Animais de estimação fazem bem à saúde. Eles são capazes de reduzir o estresse, melhorar a autoestima e até mesmo ajudar a prevenir doenças cardíacas.
+            </p>
+            <div class="d-sm-flex align-items-center gap-3">
+              <button class="btn btn-warning mb-3 w-75">Ver animais!</button>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center bg-white rounded p-3">
+            <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_uqcbmc4h.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
           </div>
         </div>
       </div>
-    </div>
 
-  </section>
+    </section>
+  </div>
 
-  <section>
-    <div class="container px-4 py-5 cat-1">
-      <h2 class="pb-2 border-bottom">Serviços</h2>
 
-      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-        <div class="d-flex flex-column align-items-start gap-2">
-          <h3 class="fw-bold text-white">Left-aligned title explaining these awesome features</h3>
-          <p class="text-white">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-          <a href="#" class="btn btn-primary btn-lg">Ver Produtos</a>
+  <section class="pt-5 pt-lg-3 bg-light">
+
+    <div class="container">
+      <div class="d-flex flex-column-reverse flex-lg-row">
+        <div class="col-lg-6">
+          <h1 class="fs-lg-4 fs-md-3 fs-xl-5 mb-5">Animais saúdaveis e com tutores certificados.</h1>
+          <ul class="list-unstyled">
+            <li class="fs-2 shadow-sm offer-list-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <span>incentivo aos tutores locais.</span></li>
+            <li class="fs-2 shadow-sm offer-list-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <span>Veja os produtos como ração, brinquedos e etc certificados.</span></li>
+          </ul>
         </div>
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <i class="bi bi-geo-alt-fill"></i>
-            </div>
-            <h4 class="fw-semibold mb-0">Featured title</h4>
-            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <i class="bi bi-geo-alt-fill"></i>
-            </div>
-            <h4 class="fw-semibold mb-0">Featured title</h4>
-            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <i class="bi bi-geo-alt-fill"></i>
-            </div>
-            <h4 class="fw-semibold mb-0">Featured title</h4>
-            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <i class="bi bi-geo-alt-fill"></i>
-            </div>
-            <h4 class="fw-semibold mb-0">Featured title</h4>
-            <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
+        <div class="col-lg-6 text-center text-lg-end">
+          <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_lb6Gsk.json" background="transparent" speed="1" style="width: 50vw; height: 500px;" loop autoplay></lottie-player>
         </div>
       </div>
     </div>
+    <!-- end of .container-->
+
   </section>
-
-
-
-
 
   <?php
   include 'componentes/footer.php';
