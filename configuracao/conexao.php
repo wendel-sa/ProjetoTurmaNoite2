@@ -59,5 +59,4 @@ FOREIGN KEY(id_produto) REFERENCES produtos(id)
 )";
 
 $db->exec($tabelaComentarios);
-
 ?>

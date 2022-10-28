@@ -12,6 +12,23 @@ $sql = "SELECT * FROM produtos WHERE Id = $id";
 //executar o select em pdo
 $resultado = $db->query($sql);
 
+//se o resultado for maior que 0 sqLite3
+if ($resultado->fetchArray(SQLITE3_ASSOC) > 0) {
+  echo "Teste de if";
+    //percorrer o resultado
+    while ($row = $resultado->fetchArray()) {
+        //pegar os dados do produto
+        $nome = $row['nome'];
+        $descricao = $row['descricao'];
+        $preco = $row['preco'];
+        $foto = $row['foto'];
+        $id = $row['Id'];
+        $id_usuario = $row['id_usuario'];
+    }
+}else {
+    echo "Produto não encontrado";
+}
+
 while ($item = $resultado->fetchArray()) {
   $id = $item['id'];
 
@@ -81,7 +98,8 @@ while ($item = $resultado->fetchArray()) {
 
             <div class="card bg-2 text-white shadow-sm px-3">
               <div class="card-body">
-                <label for="comentario" class="form-label">Comentar como
+                <label for="comentario" class="form-label">
+                  Comentar como
                   <?php
                   if (isset($_SESSION['usuario'])) {
                     echo $_SESSION['usuario'];
@@ -89,9 +107,15 @@ while ($item = $resultado->fetchArray()) {
                 </label>
 
                 <form action="../comentarios/addComentario.php" method="POST">
-                  <input type="hidden" name="id_produto" value="<?php echo $item['id']; ?>">
-                  <input type="hidden" name="id_usuario" value="<?php echo $idUsuario; ?>">
-                  <textarea class="form-control" name="comentario" id="comentario" rows="3" placeholder="Comente Aqui"></textarea>
+                  <input type="hidden" name="id_produto" 
+                  value="<?php echo $item['id']; ?>">
+
+                  <input type="hidden" name="id_usuario" 
+                  value="<?php echo $idUsuario; ?>">
+
+                  <textarea class="form-control" name="comentario" 
+                  id="comentario" rows="3" placeholder="Comente Aqui"></textarea>
+
                   <div class="form-group">
                     <label for="nota">Nota</label>
                     <select class="form-control" name="nota" id="nota">
@@ -110,27 +134,44 @@ while ($item = $resultado->fetchArray()) {
                     echo "Faça login para comentar";
                   }
               ?>
-
-
-
               </div>
 
               <h6 class="border-bottom pb-2 mb-0">
-                Comentários: 3
+                Comentários:
               </h6>
+              <?php 
+                $todosComentarios = "SELECT * FROM comentarios 
+                WHERE id_produto = $item[id]";
+                $resultadoComentario = $db->query($todosComentarios);
+                while ($comentario = $resultadoComentario->fetchArray()) {
+                  $nomeUsuario = "SELECT nome FROM usuarios
+                   WHERE id = $comentario[id_usuario]";
+                  $resultadoNome = $db->query($nomeUsuario);
+                  while ($nome = $resultadoNome->fetchArray()) {
+                    $nomeUsuario = $nome['nome'];
+                  }
+              ?>
               <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded">
                   <i class="bi bi-person"></i>
                 </div>
-
                 <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">Ana Maria</strong>
-                  <i class="bi bi-chat-left-dots"></i> 3 dias atrás
-                  <i class="bi bi-star-fill"></i> 5
+                  <strong class="d-block text-gray-dark">
+                    <?php echo $nomeUsuario; ?>
+                  </strong>
                   </br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit reprehenderit commodi. Aut repellendus ratione, ipsum maxime distinctio at iusto sit blanditiis labore laboriosam excepturi autem consequatur reprehenderit, voluptate doloribus!
+                  <i class="bi bi-chat-left-dots"></i> 
+                  <?php echo $comentario['comentario']; ?>
+                  </br>
+                  <i class="bi bi-star-fill"></i>
+                   <?php echo $comentario['nota']; ?>
+                  <i class="bi bi-clock"></i>
+                   <?php echo $comentario['dataComentario']; ?>
                 </p>
               </div>
+              <?php
+                }
+              ?>
             </div>
 
           </div>

@@ -16,7 +16,9 @@ include '../componentes/header.php';
 <div class="container ">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center text-white">Comentarios</h1>
+            <h1 class="text-center text-white">
+                Comentarios
+            </h1>
         </div>
     </div>
     <div class="row">
@@ -57,7 +59,9 @@ include '../componentes/header.php';
                     } else {
                         ?>
                         <tr>
-                            <td colspan="7" class="text-center">Nenhum comentario cadastrado</td>
+                            <td class="text-center">
+                                Nenhum comentario cadastrado
+                            </td>
                         </tr>
                         <?php
                     }

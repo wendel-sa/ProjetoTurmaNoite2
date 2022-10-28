@@ -19,7 +19,14 @@ include '../componentes/header.php';
 
                     <div>
                         <label class="form-label">Tipo</label>
-                        <input type="text" name="tipo" class="form-control">
+                        <select name="tipo" class="form-select">
+                            <option value="gato">Gato</option>
+                            <option value="cachorro">Cachorro</option>
+                            <option value="Aves">Aves</option>
+                            <option value="Tartaruga">Tartaruga</option>
+                            <option value="Roedores">Roedores</option>
+                            
+                        </select>
                     </div>
 
                     <div>
