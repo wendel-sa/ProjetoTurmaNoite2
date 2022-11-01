@@ -15,19 +15,21 @@ $resultado = $db->query($sql);
 //se o resultado for maior que 0 sqLite3
 if ($resultado->fetchArray(SQLITE3_ASSOC) > 0) {
   echo "Teste de if";
-    //percorrer o resultado
-    while ($row = $resultado->fetchArray()) {
-        //pegar os dados do produto
-        $nome = $row['nome'];
-        $descricao = $row['descricao'];
-        $preco = $row['preco'];
-        $foto = $row['foto'];
-        $id = $row['Id'];
-        $id_usuario = $row['id_usuario'];
-    }
-}else {
-    echo "Produto não encontrado";
+  //percorrer o resultado
+  while ($row = $resultado->fetchArray()) {
+    //pegar os dados do produto
+    $nome = $row['nome'];
+    $descricao = $row['descricao'];
+    $preco = $row['preco'];
+    $foto = $row['foto'];
+    $id = $row['Id'];
+    $id_usuario = $row['id_usuario'];
+  }
+} else {
+  echo "Produto não encontrado";
 }
+
+
 
 while ($item = $resultado->fetchArray()) {
   $id = $item['id'];
@@ -74,10 +76,52 @@ while ($item = $resultado->fetchArray()) {
                 </div>
                 <button class="btn btn-primary btn-lg px-4 me-md-2" type="submit">Comprar</button>
               </form>
-            <?php
-            }
-            ?>
           </div>
+
+          <div class="d-grid gap-2 d-md-flex
+           justify-content-md-start mb-4 mb-lg-3">
+            <?php
+              //Verifica se o produto já está nos favoritos
+              $sqlFavoritos = "SELECT * FROM favoritos
+               WHERE id_usuario = '$idUsuario' AND id_produto = '$item[id]'";
+              $verifica = $db->query($sqlFavoritos);
+
+              $verifica = $verifica->fetchArray(SQLITE3_ASSOC);
+              if ($verifica > 0) {
+            ?>
+              <form action="../favoritos/delete.php" method="POST">
+                <input type="hidden" name="id_usuario" 
+                value="<?php echo $idUsuario; ?>">
+
+                <input type="hidden" name="id_produto"
+                 value="<?php echo $item['id']; ?>">
+
+                <button class="btn btn-danger btn-lg
+                 px-4 me-md-2" type="submit">
+                  <i class="bi bi-heart-fill"></i>
+                  Remover dos favoritos
+                </button>
+              </form>
+            <?php
+              } else {
+            ?>
+              <form action='../favoritos/insert.php' method='POST'>
+                <input type='hidden' name='id_usuario'
+                 value='<?php echo $idUsuario; ?>'>
+
+                <input type='hidden' name='id_produto' 
+                value='<?php echo $item['id']; ?>'>
+
+                <button class='btn btn-outline-light' type='submit'>
+                  <i class='bi bi-heart'></i> Adicionar aos favoritos</button>
+                </button>
+              </form>
+            <?php } ?>
+          <?php
+            }
+          ?>
+          </div>
+          
         </div>
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
 
@@ -107,14 +151,11 @@ while ($item = $resultado->fetchArray()) {
                 </label>
 
                 <form action="../comentarios/addComentario.php" method="POST">
-                  <input type="hidden" name="id_produto" 
-                  value="<?php echo $item['id']; ?>">
+                  <input type="hidden" name="id_produto" value="<?php echo $item['id']; ?>">
 
-                  <input type="hidden" name="id_usuario" 
-                  value="<?php echo $idUsuario; ?>">
+                  <input type="hidden" name="id_usuario" value="<?php echo $idUsuario; ?>">
 
-                  <textarea class="form-control" name="comentario" 
-                  id="comentario" rows="3" placeholder="Comente Aqui"></textarea>
+                  <textarea class="form-control" name="comentario" id="comentario" rows="3" placeholder="Comente Aqui"></textarea>
 
                   <div class="form-group">
                     <label for="nota">Nota</label>
@@ -139,38 +180,38 @@ while ($item = $resultado->fetchArray()) {
               <h6 class="border-bottom pb-2 mb-0">
                 Comentários:
               </h6>
-              <?php 
-                $todosComentarios = "SELECT * FROM comentarios 
-                WHERE id_produto = $item[id]";
-                $resultadoComentario = $db->query($todosComentarios);
-                while ($comentario = $resultadoComentario->fetchArray()) {
-                  $nomeUsuario = "SELECT nome FROM usuarios
-                   WHERE id = $comentario[id_usuario]";
-                  $resultadoNome = $db->query($nomeUsuario);
-                  while ($nome = $resultadoNome->fetchArray()) {
-                    $nomeUsuario = $nome['nome'];
-                  }
-              ?>
-              <div class="d-flex text-light pt-3">
-                <div class="bd-placeholder-img flex-shrink-0 me-2 rounded">
-                  <i class="bi bi-person"></i>
-                </div>
-                <p class="pb-3 mb-0 small lh-sm border-bottom">
-                  <strong class="d-block text-gray-dark">
-                    <?php echo $nomeUsuario; ?>
-                  </strong>
-                  </br>
-                  <i class="bi bi-chat-left-dots"></i> 
-                  <?php echo $comentario['comentario']; ?>
-                  </br>
-                  <i class="bi bi-star-fill"></i>
-                   <?php echo $comentario['nota']; ?>
-                  <i class="bi bi-clock"></i>
-                   <?php echo $comentario['dataComentario']; ?>
-                </p>
-              </div>
               <?php
+              $todosComentarios = "SELECT * FROM comentarios 
+                WHERE id_produto = $item[id]";
+              $resultadoComentario = $db->query($todosComentarios);
+              while ($comentario = $resultadoComentario->fetchArray()) {
+                $nomeUsuario = "SELECT nome FROM usuarios
+                   WHERE id = $comentario[id_usuario]";
+                $resultadoNome = $db->query($nomeUsuario);
+                while ($nome = $resultadoNome->fetchArray()) {
+                  $nomeUsuario = $nome['nome'];
                 }
+              ?>
+                <div class="d-flex text-light pt-3">
+                  <div class="bd-placeholder-img flex-shrink-0 me-2 rounded">
+                    <i class="bi bi-person"></i>
+                  </div>
+                  <p class="pb-3 mb-0 small lh-sm border-bottom">
+                    <strong class="d-block text-gray-dark">
+                      <?php echo $nomeUsuario; ?>
+                    </strong>
+                    </br>
+                    <i class="bi bi-chat-left-dots"></i>
+                    <?php echo $comentario['comentario']; ?>
+                    </br>
+                    <i class="bi bi-star-fill"></i>
+                    <?php echo $comentario['nota']; ?>
+                    <i class="bi bi-clock"></i>
+                    <?php echo $comentario['dataComentario']; ?>
+                  </p>
+                </div>
+              <?php
+              }
               ?>
             </div>
 

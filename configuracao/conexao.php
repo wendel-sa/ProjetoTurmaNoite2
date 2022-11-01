@@ -59,4 +59,16 @@ FOREIGN KEY(id_produto) REFERENCES produtos(id)
 )";
 
 $db->exec($tabelaComentarios);
+
+//Tabela de favoritos
+$tabelaFavoritos =
+"CREATE TABLE IF NOT EXISTS favoritos(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+id_usuario INTEGER,
+id_produto INTEGER,
+FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+FOREIGN KEY(id_produto) REFERENCES produtos(id)
+)";
+$db->exec($tabelaFavoritos);
+
 ?>

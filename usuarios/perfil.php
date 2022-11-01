@@ -105,6 +105,75 @@ include "../componentes/header.php";
     </div>
 </section>
 
+<section class="py-5">
+    <h1 class="text-center">
+        Favoritos
+    </h1>
+
+    <div class="container">
+        <div class="row">
+            <?php
+            $favoritos = "SELECT * FROM favoritos WHERE
+            id_usuario = '" . $id . "'";
+            $consulta = $db->query($favoritos);
+            //se a consulta retornar algum resultado
+            if ($consulta->fetchArray() > 0) {
+            ?>
+                <div class="row row-cols-1 
+                row-cols-lg-3 align-items-stretch g-4 py-5">
+
+                    <?php
+                    while ($linha = $consulta->fetchArray()) {
+                        $produtos = "SELECT * FROM produtos WHERE
+                    id = '" . $linha["id_produto"] . "'";
+                        $consulta2 = $db->query($produtos);
+                        while ($linha2 = $consulta2->fetchArray()) { ?>
+
+                            <div class="col">
+                                <div class="card card-cover h-100
+                                 overflow-hidden text-bg-dark rounded-4 shadow-lg" 
+                                 style="background-image: url('<?php echo $linha2['imagem'];
+                                  ?>'); background-size: cover;  background-position: center;">
+                                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white
+                                     text-shadow-1 bg-gradiente">
+                                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                            <?php
+                                            echo $linha2["nome"];
+                                            ?>
+                                        </h3>
+                                        <ul class="d-flex list-unstyled mt-auto">
+                                            <li class="d-flex align-items-center me-3">
+                                                R$
+                                                <small>
+                                                    <?php
+                                                    echo $linha2["preco"];
+                                                    ?>
+                                                </small>
+                                            </li>
+                                            <li class="d-flex align-items-center">
+                                                <a href="../produtos/item.php?u_id=<?php echo $linha2["id"]; ?>"
+                                                 class="btn btn-outline-light">Ver Produto</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <?php }
+                    } ?>
+                </div>
+            <?php } else { ?>
+                <div class="col-12">
+                    <h1 class="text-center">
+                        Nenhum produto favoritado
+                    </h1>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+</section>
+
 <?php
 //inclui o arquivo de componentes/footer.php
 include "../componentes/footer.php";
